@@ -31,5 +31,11 @@
     "jsverify": "^0.7.1",
     "ljs": "^0.3.1",
     "mocha": "^2.2.5"
+  },
+  "wilton": {
+    "excludes": [
+        "test",
+        "Makefile"
+    ]
   }
 }

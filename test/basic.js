@@ -1,9 +1,12 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /* global describe:false it:false */
 "use strict";
 
-var trampa = require("../index.js");
+var trampa = require("trampa/index.js");
 var jsc = require("jsverify");
 var assert = require("assert");
+var describe = require("tape-compat").describe;
+var it = require("tape-compat").it;
 
 describe("wrapping", function () {
   jsc.property("unwraps", "nat", function (n) {
@@ -77,6 +80,7 @@ describe("functor-like", function () {
 
 describe("host stack explosion", function () {
   var BIGN = 100000;
+/* // actually works on rhino
   it("non trampoline throws", function () {
     function loop(n, acc) {
       return n === 0 ? acc : loop(n - 1, acc + 1);
@@ -86,6 +90,7 @@ describe("host stack explosion", function () {
       loop(BIGN, 0);
     });
   });
+*/
 
   it("trampoline works", function () {
     function loop(n, acc) {
@@ -121,3 +126,5 @@ describe("internal stack explosion", function () {
   });
 });
 
+
+return module.exports;});
