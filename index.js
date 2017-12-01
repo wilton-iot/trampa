@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 "use strict";
 
 /**
@@ -123,4 +123,4 @@ module.exports = {
 - **1.0.0** &mdash; *2015-07-14* &mdash; Initial release
 */
 
-return module.exports;});
+require = requireOrig;});
